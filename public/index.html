@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>EATR</title>
+    <link rel='stylesheet' href='/css/style.css' />	
+    <link rel='stylesheet' href='/css/bundle.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    <div ng-controller="MainController">
+        
+        <nav-bar>
+
+    	</nav-bar>
+        <div style="clear:both"></div>
+        
+         <div class="container content-container" >    
+            <div class="row" >
+                <div id="map-container" class="col-sm-8 col-md-6 col-lg-7" style="height: 100%;">
+                    <ui-gmap-google-map center='map.center' zoom='map.zoom' control='map.control'>
+                        <map-marker ng-repeat="place in placesDetails" place="place" map="map.control.getGMap()" index="{{$index + 1}}" 
+                        dist="distances[$index]">
+                        </map-marker>
+
+                    </ui-gmap-google-map>
+                </div>
+                <div id="places-content-sidebar" class="col-sm-8 col-md-6 col-lg-5" style="">
+                    <div id="places-sort-bar" class="place-detail-text">
+                        <span>Sort Restaurants By:</span>
+                        <span class="pull-right">
+                            <div class="dropdown">
+                                <button id="places-sort-dd" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{sort.selected.name}}
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                    <li ng-repeat="option in sort.options"><a ng-click="sortData(option)" href="#">{{option.name}}</a></li>
+                                </ul>
+                            </div>
+                            </div>
+                </span>
+                    <place-detail ng-repeat="place in placesDetails" place="place" index="{{$index + 1}}" dist="distances[$index]">
+
+                    </place-detail>
+                </div>
+             
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

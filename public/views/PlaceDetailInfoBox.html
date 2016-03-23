@@ -1,0 +1,16 @@
+<div>
+    <h3 class="place-detail-header">
+            {{place.name}}
+    </h3>
+    <p class="place-detail-text">
+        <span >{{place.vicinity}}</span>
+    </p>
+    <p class="place-detail-text">
+        <span >
+            <rating ng-if="place.price_level" rating-value="place.price_level" icon-class="fa-usd">
+            </rating>
+        </span>
+        &middot;
+        <span>{{dist.text}}</span>
+    </p>
+</div>

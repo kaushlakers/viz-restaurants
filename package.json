@@ -1,0 +1,28 @@
+{
+  "name": "viz-restaurants",
+  "version": "1.0.0",
+  "description": "App to visualize nearby restaurants",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lakshmikanth Kaushik",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.1.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.2",
+    "angular-google-maps": "^2.3.2",
+    "angular-simple-logger": "^0.1.7",
+    "bootstrap": "^3.3.6",
+    "browserify-css": "^0.9.1",
+    "jquery": "^2.2.2",
+    "lodash": "^4.6.1"
+  }
+}
