@@ -36,4 +36,4 @@ node_modules
 public/css/bundle.css
 
 #js bundle that is generated
-public/js/
+public/js/main.js
