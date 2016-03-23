@@ -1,0 +1,36 @@
+<div class="row place-detail-item">
+    <div class="col-sm-1 col-md-1 place-detail-id">
+    	<h4>{{index}}</h4>
+    </div>
+    <div class="col-sm-6 col-md-7 place-detail-info" style="height:100%;">
+    	
+    	<h3 title="{{place.name}}" class="place-detail-header">
+    		{{place.name}}
+    	</h3>
+
+    	<p class="place-detail-text">
+    		<span >{{getFormattedAddress(place.vicinity)}}</span>
+    	</p>
+    	<p class="place-detail-text">
+    		<span >
+    			<rating ng-if="place.price_level" rating-value="place.price_level" icon-class="fa-usd">
+    			</rating>
+    		</span>
+    		&middot;
+    		
+			<span>{{dist.text}}</span>
+		</p>
+    	<p class="place-detail-text">
+    		<span>{{place.rating}}</span>
+    		&middot;
+    		<span>
+    			<rating rating-value="place.rating" icon-class="fa-star">
+    			</rating>
+    		</span>
+    		&middot;
+    		<span>{{place.reviews ? place.reviews.length : 0 }} Reviews</span>
+    	</p>
+    </div>
+    <div class="col-sm-5 col-md-4 place-photo" style="height:100%;"><img src="{{getImageUrl()}}" style="width:100%; height:100%;" alt="{{place.icon}}" /></div>
+
+</div>
